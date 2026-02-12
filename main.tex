@@ -1,0 +1,159 @@
+\documentclass[12pt]{report}
+
+% --- PAGE LAYOUT & FORMATTING --- %
+\usepackage[a4paper, margin=1in]{geometry}
+\usepackage{fancyhdr}
+\usepackage{float}
+\usepackage{titlesec}  
+\usepackage{booktabs}   
+\usepackage{indentfirst}
+\usepackage{hyperref}   
+\usepackage{bookmark}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\input{preamble}
+
+% --- SUBFILES --- %
+\usepackage{subfiles}
+
+
+
+% --- HEADER & FOOTER CONFIG --- %
+\setlength{\headheight}{15pt}
+\pagestyle{fancy}
+\fancyhf{} % Clear all default fields
+
+% 1. Standard Header (Experiment Name Left | Name Right)
+\fancyhead[L]{\nouppercase{\leftmark}} 
+\fancyhead[R]{\textbf{Yojit Kumar} $\mid$ 20231289}
+\fancyfoot[C]{\thepage}
+
+% 2. "Plain" Style Redefinition 
+% (Applied automatically to the first page of every Experiment/Chapter)
+\fancypagestyle{plain}{%
+  \fancyhf{} % Clear left header
+  \fancyhead[R]{\textbf{Yojit Kumar} $\mid$ 20231289} % Keep Name Visible
+  \fancyfoot[C]{\thepage}
+  \renewcommand{\headrulewidth}{0pt} 
+}
+
+% Ensure chapters only put the title in the header, not "Chapter N"
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+
+
+
+
+% --- EXPERIMENT TITLE --- %
+\titleformat{\chapter}[display]
+  {\bfseries\Large\itshape} % format
+  {Experiment No. \ \thechapter} % label
+  {0.5ex} % sep
+  {\rule{\textwidth}{1pt}
+  	\vspace{1ex}
+	\centering} % before-code
+  [\vspace{-1ex}
+  \rule{\textwidth}{0.3pt}] % after-code
+
+
+
+
+% --- CUSTOM COMMANDS --- %
+\newcommand*{\titleGP}{
+	\begingroup
+	\centering
+	\vspace*{\baselineskip}
+	\rule{\textwidth}{1.6pt}\vspace*{-\baselineskip}\vspace*{2pt}
+	\rule{\textwidth}{0.4pt}\\[\baselineskip]
+	{\LARGE PH3244 | PHYSICS LABORATORY - IV}\\[0.2\baselineskip]
+	\rule{\textwidth}{0.4pt}\vspace*{-\baselineskip}\vspace{3.2pt}
+	\rule{\textwidth}{1.6pt}\\[2\baselineskip]
+	
+	\vspace{2in}
+	
+	\textbf{\Large Yojit Kumar}\\
+	\vspace{0.5in}
+	\textbf{\Large Reg. no.: 20231289}\\
+	\vspace{0.5in}
+	\textbf{\Large Batch: (Friday)}\\
+	\vspace{0.5in}
+	\textbf{\Large Lab Partner: Nachiketa Kulkarni}\\
+	\vspace{0.5in}
+	\endgroup
+}
+
+\newcommand*{\newexperiment}[2]{\begingroup
+    \chapter{#1}
+
+    \noindent \textbf{Date: #2}
+    \endgroup
+}
+
+
+
+
+% --- DOCUMENT START --- %
+\begin{document}
+
+% --- FRONT --- %
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\titleGP
+\clearpage
+
+% --- INDEX --- %
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\begin{center}
+	{\huge\textbf{Index of Experiments}} \\[1em]
+	\hrulefill
+\end{center}
+\vspace{1cm}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{7.8cm}|c|c|c|}
+		\hline
+		\multirow{2}{*}{\textbf{\#}}& \multirow{2}{*}{\textbf{Name of Experiment}}& \multirow{2}{*}{\textbf{Page}}& \multicolumn{2}{|c|}{\textbf{Date}}\\ \cline{4-5}
+					    & & &\textbf{Conducted}& \textbf{Submitted}\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+	\end{tabular}
+\end{table}
+
+% --- MAIN --- %
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\clearpage
+\setcounter{page}{1}
+\subfile{QuinckesTube/QuinckesTube}
+
+\setcounter{page}{11}
+\subfile{BJT/BJT}
+
+
+\end{document}
+

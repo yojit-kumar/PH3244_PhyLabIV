@@ -1,0 +1,218 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../QuinckesTube}}}
+
+
+\begin{document}
+\input{data/calculated_results.tex}
+
+\newexperiment{Quincke's Method}{23 January, 2026}
+
+\vspace*{1cm}
+\section{Aim}
+The aim of the experiment is to measure the magnetic susceptibility of the salt solution based on the principle that in a non-uniform magnetic field, magnetic dipoles within the liquid align with the field. This creates a force that pulls the liquid into the region of the stronger field (between the magnet poles), causing the liquid level to rise against gravity.
+
+\section{Theory}
+When an object is placed in a magnetic field, a magnetic moment is induced in it. The magnetic moment can then be measured by measuring the force exerted by the sample in an inhomogeneous magnetic field. The force on the sample is  negative of the gradient of the change in energy density when the sample is placed. And a simplified expression can be written as:
+$$ \chi = \frac{2 \rho g h}{\mu_0 H^2} $$
+
+\section{Experimental Observation}
+\subsection{Preparation of the Solution}
+\subsubsection*{Solution - I}
+\noindent Weight of salt(\textit{MnSO$_4$.H$_2$O}) = $\SI{5.0}{\gram}$ \\ 
+Volume of water added = $\SI{30}{\milli\litre}$ \\ 
+Molarity of the salt = 
+$$\left(\frac{5.0}{169.02} \frac{1000}{30}\right) = \SI{0.99}{M}$$ 
+
+\subsubsection*{Solution - II}
+\noindent Weight of salt(\textit{MnSO$_4$.H$_2$O}) = $\SI{7.5}{\gram}$ \\ 
+Volume of water added = $\SI{15}{\milli\litre}$ \\ 
+Molarity of the salt = 
+$$\left(\frac{7.5}{169.02} \frac{1000}{15}\right) = \SI{2.96}{M}$$ 
+
+\subsection{Calibration Data}
+\input{data/calibration_tables.tex}
+
+\subsection{Microscope Measurment}
+\input{data/measurement_tables.tex}
+
+\subsection{Other Observations}
+\begin{enumerate}
+	\item The solution rises on applying an external magnetic field. $\to$ \textbf{its paramagnetic}.
+	\item You need a strong concentration for even \textit{MnSO$_4$}, as we shown that there was very less height difference for our \textbf{solution 1}
+	\item We find it easier to measure readings going down compared to going up, as we believe that was solution passing through already wetted glass. Whilst for the first solution we were unable to measure a consistent trend, as we believe that was because of the solution sticking to the tube. This has introduced a random error in our experiment.
+	\item We observed the meniscus changing its shape towards the end of the our second solution readings, when the meniscus was reaching the borders of the pole of the electromagnet. Suggesting, non-uniform fields at the boundaries.
+	\item We calibrated our setup for both increasing and decreasing current to check for hysterisis. We observed it to be very insignificant from our readings, although very clear to see.
+\end{enumerate}
+
+\section{Analysis}
+The first part in our analysis is to create the calibration plot for the Magnetic Field v/s Current curve using our measurments. We have calibrated the setup for both increasing and decreasing trend of current, wo we can utilise both sets of our measurments and also study the hysterisis in the coil.
+
+Residual magnetic field strength before we started any measurments was \textbf{$\SI{400}{G}$} and the same after we concluded our calibration was $\SI{460}{G}$. So we saw a definite difference between field strength if we are increasing or decreasing, so we can confirm hysterisis. But the difference is pretty negligible.
+
+We created simple python plots and curve fitted the calibration data onto a quadratic polynomial. The corresponding equation that we get for increasing and decreasing trend are
+\begin{align*}
+	B &= (\incA) \times I^2 + (\incB) \times I + (\incC) \\ 
+	B &= (\decA) \times I^2 + (\decB) \times I + (\decC)
+\end{align*} respectively.
+
+\begin{figure}[!h]
+	\includegraphics[width=0.48\linewidth]{plots/calibration_increasing.png}
+	\hfill
+	\includegraphics[width=0.48\linewidth]{plots/calibration_decreasing.png}
+	\caption{Calibration Curves for increasing \& decreasing trend}
+\end{figure}
+
+Next, we move on to plot the Height Difference v/s B$^2$ curve, which we will do by finding the corresponding values for magnetic field from the calibration curve fit. \textbf{Note:} This has been linearly plotted after converting all the units in SI.
+
+
+\begin{figure}[H]
+	\includegraphics[width=0.48\linewidth]{plots/reading_SolOneInc.png}
+	\hfill
+	\includegraphics[width=0.48\linewidth]{plots/reading_SolOneDec.png}
+	\caption{curve fit for first solution with less concentration}
+\end{figure}
+
+\begin{figure}[H]
+	\includegraphics[width=0.48\linewidth]{plots/reading_SolTwoInc.png}
+	\hfill
+	\includegraphics[width=0.48\linewidth]{plots/reading_SolTwoDec.png}
+	\caption{curve fit for second solution with higher concentration}
+\end{figure}
+
+Before moving on two calculate $\chi$ value, we need to find the specific density of the solution. We didn't had access to the specific gravity bottle as said in the lab manual, So wi will be taking some assumptions and calculating the values in a ideal sense. 
+
+\begin{itemize}
+	\item density of water ($\rho_{w}$) = $\SI{0.9970}{\gram\per\centi\meter\cubed}$ (at $\SI{25}{\degreeCelsius}$)
+	\item density of \textit{MnSO$_4$.H$_2$O} ($\rho_{salt}$) = $\SI{2.95}{\gram\per\centi\meter\cubed}$
+\end{itemize}
+\subsubsection*{Solution - I}
+\begin{itemize}
+	\item weight of water = $30 \times 0.9970 = \SI{29.91}{\gram}$
+	\item volume of salt = $5.0 \times \frac{1}{2.95} = \SI{1.69}{\milli\litre}$
+	\item Total weight of solution = $5.0 + 29.91 = \SI{34.91}{\gram}$
+	\item Total volume of solution = $30 + 1.69 = \SI{31.69}{\milli\liter}$
+	\item density of solution ($\rho_{sol}$) = $\frac{34.91}{31.69} = \underline{\SI{1.10}{\gram\per\centi\meter\cubed}}$
+\end{itemize}
+
+\subsubsection*{Solution - II}
+\begin{itemize}
+	\item weight of water = $15 \times 0.9970 = \SI{14.96}{\gram}$
+	\item volume of salt = $7.5 \times \frac{1}{2.95} = \SI{2.54}{\milli\litre}$
+	\item Total weight of solution = $7.5 + 14.96 = \SI{22.46}{\gram}$
+	\item Total volume of solution = $15 + 2.54 = \SI{17.54}{\milli\liter}$
+	\item density of solution ($\rho_{sol}$) = $\frac{22.46}{17.54} = \underline{\SI{1.28}{\gram\per\centi\meter\cubed}}$
+\end{itemize}
+
+
+Using the density and the slope and putting it in the standard formulae, we can find the value of $\chi_{sol}$ for us.
+$$ \chi_{SI} = \frac{2\mu_0 \rho g h}{B^2} $$
+
+For Solution I (increasing),
+\begin{align*}
+	\chi_1 &= 2 \times 4 \pi \times \SI{e-7}{} \times 1100 \times \slopeSolOneInc \\
+	\chi_1 &= \chiSolOneInc
+\end{align*}
+
+For Solution I (decreasing),
+\begin{align*}
+	\chi_1 &= 2 \times 4 \pi \times \SI{e-7}{} \times 1100 \times \slopeSolOneDec \\
+\chi_1 &= \chiSolOneDec
+\end{align*}
+
+For Solution II (increasing),
+\begin{align*}
+	\chi_2 &= 2 \times 4 \pi \times \SI{e-7}{} \times 1280 \times \slopeSolTwoInc \\
+	\chi_2 &= \chiSolTwoInc
+\end{align*}
+
+For Solution II (decreasing),
+\begin{align*}
+	\chi_2 &= 2 \times 4 \pi \times \SI{e-7}{} \times 1280 \times \slopeSolTwoDec \\
+	\chi_2 &= \chiSolTwoDec
+\end{align*}
+
+We will use a simple average to continue on from here;
+\begin{align*}
+	\chi_1 &= \SI{8.9830e-5}{} \\
+	\chi_2 &= \SI{3.4390e-4}{} 
+\end{align*}
+
+This quantity $\chi$ can be referred to as Volume Magnetic susceptibility, to calculate mass susceptibility and molar susceptibility. We need to use the following formulae:
+\begin{align*}
+	\chi^{\prime}_{mass} &= \chi/\rho \\
+\chi^{\prime\prime}_{molar} &= M\chi^{\prime}
+\end{align*}
+
+Water is a diamagnetic and we can remove its contribution from the volume susceptibility to calculate the mass susceptibility for just the salt. 
+\begin{align*}
+	\chi_{sol} &= \chi_{salt} + \chi_{water} \\ 
+\end{align*}
+
+For Solution - II,
+\begin{align*}
+	\SI{3.7486e-4}{} &= \chi_{salt} - (\SI{9.04e-6}{}) \\ 
+	\chi_{salt} &= \SI{3.8390e-4}{}
+\end{align*}
+
+Similar relation can be written about the mass susceptibility of the solution:
+\begin{align*}
+	\chi^{\prime}_{sol} &= \frac{m_{salt}}{m_{sol}}\chi^{\prime}_{salt} + \frac{m_{water}}{m_{sol}}\chi^{\prime}_{water} \\ 
+\end{align*}
+
+\begin{align*}
+	\chi^{\prime}_{sol} &= \frac{7.5}{22.46}\chi^{\prime}_{salt} + \frac{14.96}{22.46}(\SI{- 9.04e-9}{}) \\
+	\frac{\SI{3.7486e-4}{}}{1280} &= 0.3339\chi^{\prime}_{salt} - (\SI{6.02e-9}{}) \\ 
+	\chi^{\prime}_{salt} &=  \SI{8.9511e-7}{}
+\end{align*}
+
+Now, if we were to calculate the Molar susceptibility we get:
+\begin{align*}
+	\chi_{molar} &= \SI{169.02e-3}{} \times \SI{8.9511e-7}{} \\
+	\chi_{molar} &= \SI{1.5127e-7}{}
+\end{align*}
+
+\begin{table}[H]
+	\centering
+	\caption{Experimental Results for the given salt}
+	\begin{tabular}{llc}
+		\toprule
+		\# & Parameter & Value \\
+		\midrule
+		1 & Volume Susceptibility ($\chi$) & $\SI{3.7486e-4}{}$ \\
+		2 & Mass Susceptibility ($\chi^{\prime}$) & $\SI{8.9511e-7}{\meter\cubed\per\kilo\gram}$ \\ 
+		3 & Molar Susceptibility ($\chi^{\prime\prime}$) & $\SI{1.5127e-7}{\meter\cubed\per\mole}$ \\
+		\bottomrule
+	\end{tabular}
+\end{table}
+\textbf{Theoritical Molar Susceptibility for Manganese(II) Sulfate Monohydrate (\textit{MnSO$_4$.H$_2$O}) $= \SI{1.7844e-7}{\meter\cubed\per\mole}$}
+
+\subsection*{Error Analysis}
+\begin{align*}
+	\textrm{Error in Molar Susceptibility result} &= \frac{\SI{1.7844e-7}{}-\SI{1.5127e-7}{}}{\SI{1.7844e-7}{}}\times 100\% \\
+						      &= 15.22\%
+\end{align*}
+
+The propagation of uncertainty while taking measurement can be written as:
+
+\begin{align*}
+	\frac{ \sigma_{\chi^{\prime\prime}} }{ \chi^{\prime\prime} } &=  \frac{ \sigma_{\chi^{\prime}} }{ \chi^{\prime} } \\
+								     &= \sqrt{ \left(\frac{0.1}{7.5}\right)^2 + \left(\frac{0.1}{22.46}\right)^2 + \left(\frac{ \sigma_{\chi^{\prime}_{sol}}}{ \chi^{\prime}_{sol} }\right)^2 } \\
+								     &= \sqrt{ \left(\frac{0.1}{7.5}\right)^2 + \left(\frac{0.1}{22.46}\right)^2 + \left(\frac{\sigma_{\chi}}{\chi} \right)^2 } \\
+								     &= \sqrt{ \left(\frac{0.1}{7.5}\right)^2 + \left(\frac{0.1}{22.46}\right)^2 + \left(\frac{\sigma_{slope}}{\textrm{slope}} \right)^2 } \\
+	\sigma_{\chi^{\prime\prime}} &= \SI{1.5127e-7}{} \sqrt{ \left(\frac{0.1}{7.5}\right)^2 + \left(\frac{0.1}{22.46}\right)^2 + \left(\frac{\slopeErrSolTwoDec}{\slopeSolTwoDec} \right)^2 } \\
+	\sigma_{\chi^{\prime\prime}} &= \SI{7.68e-9}{} 
+\end{align*}
+
+This uncertainty due to measurment comes around to be about 5\%. Using this we can safely say that our experiment was able to measure the magnetic susceptibilty of the salt under certain standard deviation limits.
+
+\textbf{Why is our result slightly lower than theoritcal?} \\
+We attribute this deviation to be mostly arising from a improper setup. Before our second set of readings, we tried to make sure our tube was clean, and used IPA to help us aid in that process. We waited for long enough time for the IPA to dry off, but as we started taking readings for our second solution we see that some bubbles are rising in the tube, especially at the thinner end. This was obvious to see through the microscope, and minorly affected our ability to take the microscope reading. In hindsight, we realised that this must be the IPA rising as it is lighter compared to our solution. This introduced a IPA which slightly diluted our solution and affected the density value. Magnetically this doesn't had a significant as it is dimagnetic like water, but has even lesser magnetic moment. In an extreme case, oxidation of manganese ions in the solution could also have played a role in the decreased value. Also the theoritcal value is temperature dependent and measured at \SI{293}{\kelvin} which is definitly lower than the temperature setting for our experiment. And a higher temperature would lead to a lower value as the magnetization is related to temperature as inverse dependency as stated by Curie's Law.
+
+
+\section{Conclusion}
+We successfully completed the experiment by measuring the magnetic susceptibility of the salt, manganese sufate monohydrate. Our measured value for the molar magnetic susceptibility \textbf{($\SI{1.5217e-7}{}$)} was about \textbf{~15\%} deviation form the theoritical value.
+
+Our value being lower than the theoritical one can be easily explained because of the uncertainty in the solution density and temperature conditions.
+
+\end{document}
