@@ -5,18 +5,118 @@
 \begin{document}
 
 \newexperiment{Bipolar Junction Transistor}{30 January, 2026}
+\setcounter{page}{11}
 
 \vspace*{1cm}
 \section{Aim}
 The aim of the experiment is to study the input and output characterstic of an n-p-n Bipolar Junction Transistor that is setup in common emitter bias mode. We will also construct an amplifier circuit and test the current and voltage gains for the circuit. We will also create a phase-shift oscillator circuit and test its function.
 
 \section{Theory}
+A BJT uses two p-n junctions, which are regions on a single crystal of material.
+They are either pnp or npn type.
+This create three regions: the emitter, the base and the collector.
+The emitter is heavily doped and emits charge carriers, the base is lightly doped and thin, and the collector is moderately doped and collects the charge carriers.
+
+\textbf{Diagram of a BJT in CE configuration:}
+\begin{figure}[H]
+	\centering
+	\input{npn_bjt.pdf_tex}
+	\label{fig:bjt_wiki}
+	\caption{NPN BJT with forward-biased B-E junction and reverse-biased B-C junction}
+\end{figure}
+The BJT can be used as an amplifier or a switch.
+In the common emitter (CE) configuration, the emitter is common to both the input and output circuits, and the base is the input while the collector is the output.
+The BJT can be used to amplify signals by controlling the current through the base, which in turn controls the current through the collector and emitter.
+The current gain of a BJT is defined as the ratio of the collector current to the base current, and is denoted by $\beta$.
+The BJT can also be used to create oscillators by using feedback to sustain oscillations.
+
+\noindent Circuit Diagram of a BJT amplifier and oscillator:
+
+%\begin{figure}[htbp]
+%	\input{bjt_amplifier.tex}
+%	\caption{BJT Amplifier Circuit}
+%	\label{fig:amplifier}
+%\end{figure}
+%\begin{figure}[htbp]
+%	\input{bjt_oscillator.tex}
+%	\caption{BJT Oscillator Circuit}
+%	\label{fig:oscillator}
+%\end{figure}
+\begin{figure}[H]
+	\centering
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\input{bjt_amplifier.tex}
+		\subcaption{BJT amplifier}
+		\label{fig:amplifier}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.4\textwidth}
+		\centering
+		\input{bjt_oscillator.tex}
+		\subcaption{BJT oscillator}
+		\label{fig:oscillator}
+	\end{subfigure}
+	\caption{BJT amplifier and oscillator circuits}
+	\label{fig:amp_osc}
+\end{figure}
+\noindent In the amplifier circuit (figure \ref{fig:amplifier}), a capacitor is used before \(V_{out}\) to block any DC component of the output signal, allowing only the AC component to pass through.
+\begin{itemize}
+	\item The current gain \(\beta_{dc} = \dfrac{\Delta I_C}{\Delta I_B}\)
+	\item The voltage gain \(\dfrac{V_{\textrm{out}}}{V_{\textrm{in}}} = \dfrac{\Delta V_L}{\Delta V_B} = - \dfrac{R_L}{R_E}\)
+\end{itemize}
+
+\noindent In the oscillator circuit (figure \ref{fig:oscillator}), there is an oscillation in voltage between the Collector and Ground.
+The frequency of oscillation is given by:
+\[f = \frac{1}{2\pi RC} \frac{1}{\sqrt{6 + 4\tfrac{R_C}{R}}}\]
+We attempted to build the oscillator such that \(f \approx 1000Hz\)
 
 \section{Experimental Observation}
 \input{data/observation_tables.tex}
 
-\section{Analysis}
+\subsection*{Amplifier Circuit}
+The input signal was a sinusoidal wave of frequency \(2046 \textrm{Hz}\).
+\begin{table}[H]
+	\centering
+	\input{bjt_amp_obs.tex}
+	\caption{Observations for the BJT amplifier circuit}
+\end{table}
+\subsection*{Oscillator Circuit}
+The expected frequency of oscillation was \(1000 \textrm{Hz}\).
+Our input voltage was \(12 \mathrm{V}\) DC.
+The observed output was \(6 \mathrm{V}\) DC.
+Even after multiple trials, with different resistor and capacitor combinations, we got a DC signal the entire time.
 
-\section{Conclusion}
+We attempted with values of \(R\) ranging from \(100 \Omega\) to \(20 k \Omega\) and \(C\) ranging from \(10 \mu F\) to \(220 \mu F\).
+These trials were done with both ceramic and electrolytic capacitors, but our observations did not change.
+
+Reason for calling the output a DC signal: The oscilloscope, when set to AC mode, didn't show any consistent oscillations or a time period of the oscillations.
+Meanwhile, when set to DC mode, it showed a constant voltage of some value, with almost no fluctuations.
+
+\section{Analysis \& Conclusion}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{"plots/base_char"}
+	\caption{Input Characterstics Curve}
+	\label{fig:input_char}
+\end{figure}
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=\linewidth]{"plots/collector_char"}
+	\caption{Output Characterstics Curve}
+	\label{fig:output_char}
+\end{figure}
+
+\subsection*{Transfer Characteristics}
+The curves for the input\ref{fig:input_char} and output\ref{fig:output_char} characteristics of the BJT show that the BJT is working, and performs within specifications.
+
+\subsection*{Amplifier Circuit}
+The current gain of the amplifier circuit is \(\beta_{\text{dc}} = 130.82\), which shows that a small change in the input current will cause a large change in the output current.
+The voltage gain of the amplifier circuit is \(A_v = -24.44\).
+According to the formula given, the voltage gain should be \(-\dfrac{R_L}{R_E} = - \dfrac{1200}{220} = -5.45\).
+The observed voltage gain is \(6.57\), which is close to the expected value.
+
+\subsection*{Oscillator Circuit}
+We tried different troubleshooting involving changing the gain of the amplifier, simulating the electrical circuit before creating it physically, but we were unable to create a working oscillator circuit even after that, 
 
 \end{document}

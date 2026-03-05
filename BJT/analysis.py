@@ -45,8 +45,8 @@ output_char_20 = pd.read_csv("data/output_char_20.csv")
 output_char_50 = pd.read_csv("data/output_char_50.csv")
 output_char_80 = pd.read_csv("data/output_char_80.csv")
 
-input_VCC = np.array([1.00, 3.00, 8.00])
-output_IB = np.array([20, 50, 80])
+input_VCC = np.array(["1.00 V", "3.00 V", "8.00 V"])
+output_IB = np.array(["20 muA", "50 muA", "80 muA"])
 
 marker = ['o', 's', '^']
 linestyle = ['-', ':', '-.']
@@ -110,7 +110,7 @@ plt.show()
 
 
 ## OUTPUT CHARACTERSTIC ##
-df_1 = pd.DataFrame({"\\#": [i+1 for i in range(14)]}) 
+df_1 = pd.DataFrame({"\\#": [i+1 for i in range(13)]}) 
 df_2 = pd.DataFrame({
     "V$_{\\textrm{CE}}$ ($\\si{\\volt}$) 0": output_char_20.iloc[:,0],
     "I$_{\\textrm{C}}$ ($\\si{\\milli\\ampere}$) 0": output_char_20.iloc[:,1],
