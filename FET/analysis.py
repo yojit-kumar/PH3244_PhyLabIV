@@ -4,11 +4,6 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
 
-
-# --- CONFIGURATION & UNCERTAINTIES ---
-
-
-
 # File to save LaTeX commands/tables
 RESULTS_FILE = "data/calculated_results.tex"
 OBS_TABLES_FILE = "data/observation_tables.tex"

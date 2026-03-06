@@ -1,0 +1,132 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../EbyM}}}
+
+\begin{document}
+
+\newexperiment{e/m Ratio}{13 February, 2026}
+\setcounter{page}{21}
+
+\vspace*{1cm}
+\section{Aim}
+The aim of the experiment is to calculate the charge-by-mass ($e/m$) ratio of an electron, which is a fundamental constant that governs the behaviour of electrons in electromagnetic fields. Our experiment is based on Thomson's method and we use a Helmoltz coil apparatus in this setup.
+
+\section{Theory}
+This experiment works by accelerating electrons through a known potential in the tube. Some of these electrons collide with the Helium filled in the tube and radiate visible light, giving us a track of their path. The tube is placed between a pair of Helmholtz coil which provides it a uniform magnetic field. The beam is deflected in a circular path of radius $r$ . This circular path's diameter can be measured and can be used to obtain the $e/m$ ratio.
+$$ e/m = 8V/B^2d^2 $$
+
+We can simply derive this relation by the following steps: \\
+Kinetic energy of the accelerated electron can be described as $eV = mv^2/2$. So the velocity can be written as:
+\begin{equation}
+	v = \sqrt{2eV/m}
+	\label{eq:one}
+\end{equation}
+Passing through a uniform magnetic field $B$, Lorentz force acting on the electron make it go on a circular path if the field is orthogonal to the electron's trajectory. We can write this relation as the centripetal force balancing the Lorentz force, $eVB = mv^2/r$. So the velocty can be written as:
+\begin{equation}
+	v = eBr/m
+	\label{eq:two}
+\end{equation}
+
+From eqns. \autoref{eq:one} \& \autoref{eq:two} we obtain:
+\begin{align}
+	eBr/m &= \sqrt{2eV/m} \\
+	e/m &= 2V/B^2r^2
+\end{align}
+
+For this apparatus we are controlling and fixing the magnetic field by supplying constant current to the pair of Helmholtz coils. We can write this magentic field produced by the coils as:
+$$ B = 2\times\frac{\mu_0In}{2 (5/4)^{3/2} a} = 2 \times \left( \frac{2\pi I n}{(5/4)^{3/2}a} \times 10^{-7}\right) \si{tesla} $$
+where, $n$ is the number of turns in a coil, and $a$ is the radius of the coil. \\
+The specifications of our specific apparatus is as follows:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lc}
+		\toprule
+		Radii of Coils & $\SI{14}{\centi\meter}$ \\
+		Number of turns & 160 each \\
+		Accelerating Voltage & 0 - 250$\si{\volt}$ \\
+		\bottomrule
+	\end{tabular}
+	\caption{Specifications of the $e/m$ Apparatus}
+	\label{tab:spec}
+\end{table}
+
+Using all of this information, our final formulae for $e/m$ ratio calculation is simply:
+\begin{equation}
+	\frac{e}{m} = (\SI{7.576e-6}{})\times \frac{V}{I^2 d^2} \si{\coulomb\per\kilogram}
+	\label{eq:formula}
+\end{equation}
+
+\section{Experimental Observation}
+\input{data/calculated_results.tex}
+\input{data/observation_tables.tex}
+
+\section{Analysis}
+\subsection*{Calculating from plotting}
+%\begin{figure}[H]
+%	\includegraphics[width=0.5\textwidth]{"plots/ebm1.png"}
+%	\caption{$D^2$ vs. Voltage for $I = \SI{1}{\ampere}$}
+%	\label{fig:ebm1}
+%\end{figure}
+%\begin{figure}[H]
+%	\centering
+%	\includegraphics[width=0.5\textwidth]{"plots/ebm2.png"}
+%	\caption{$D^2$ vs. Voltage for $I = \SI{1.5}{\ampere}$}
+%	\label{fig:ebm2}
+%\end{figure}
+
+\begin{figure}[H]
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{"plots/ebm1.png"}
+		\caption{$D^2$ vs. Voltage for $I = \SI{1}{\ampere}$}
+		\label{fig:ebm1}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.5\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{"plots/ebm2.png"}
+		\caption{$D^2$ vs. Voltage for $I = \SI{1.5}{\ampere}$}
+		\label{fig:ebm2}
+	\end{subfigure}
+\end{figure}
+
+	
+We have simply linearly fitted the data to find the following plots; \autoref{fig:ebm1} \& \autoref{fig:ebm2}. For the plot \autoref{fig:ebm1} the slope of the linear fit is $\slopeOne \pm \slopeOneerr$
+and for the plot \autoref{fig:ebm2} the slope of the linear fit is $\slopeTwo \pm \slopeTwoerr$.\\
+From the slope we can easily calculate the $e/m$ ratio using the relation as given in \autoref{eq:formula}. \\
+For \autoref{fig:ebm1}:
+\begin{align*}
+	\frac{e}{m} &= (\SI{7.576e-6}{})\times \frac{1}{\slopeOne \times (1)^2} \si{\coulomb\per\kilogram} \\
+		    &= \resultOne \pm \resultOneerr
+\end{align*}
+For \autoref{fig:ebm2}:
+\begin{align*}
+	\frac{e}{m} &= (\SI{7.576e-6}{})\times \frac{1}{\slopeTwo \times (1.5)^2} \si{\coulomb\per\kilogram} \\
+		    &= \resultTwo \pm \resultTwoerr 
+\end{align*}
+
+\subsection*{Directly Calculating from the data by taking a mean}
+\input{data/analysis_tables.tex}
+Thus, the mean value for $e/m$ obtained is \meanEBM and the standard deviation as \stdEBM.
+
+\subsection*{Error Analysis}
+We ae getting lower than theoritcal value consistently for all our observations. 
+This is predominantly due to the fact that it is impossible for us to accurately measure the diameter of the path of the beam. 
+We simply took the outermost ring of the thick beam that we observed, to be consistent among our readings, but this simply lead to a higher estimation of $r$ the radius of trajectory. 
+And finally lead to us calculating a lower e/m ratio.
+
+The error in our final result compared to the theoritcal value is:
+\begin{align*}
+	\textrm{Error} &= \frac{1.7588e11 - resultTwo}{1.7588e11} \times 100\% \\ 
+		       &= 7.65\%
+\end{align*}
+
+\section{Conclusion}
+The theoritical value for $e/m$ ratio is $\SI{1.76}{\coulomb\per\kilogram}$. 
+Our best result was during the second set of calculations albeit with a higher standard deviation which was equal to $\resultTwo \pm \resultTwoerr \si{\coulomb\per\kilogram}$.
+This gave us an error percentage equal to $7.65\%$.
+
+Our values were consistently below the theoritical value which has been explained above sufficiently.
+Overall we achieved a reasonably close value for $e/m$ ratio and can consider the experiment as successful.
+
+\end{document}
