@@ -67,9 +67,9 @@ drain_combined = pd.concat([drain_0, drain_0245, drain_1], axis=1)
 
 # Assign clear LaTeX column names for all 6 columns
 drain_combined.columns = [
-    r"$V_{DS}$ (V)", r"$I_D$ (mA) [$V_{GS}=0$]", 
-    r"$V_{DS}$ (V)", r"$I_D$ (mA) [$V_{GS}=-0.245$]", 
-    r"$V_{DS}$ (V)", r"$I_D$ (mA) [$V_{GS}=-1.0$]"
+    r"$V_{DS}$ (-1)(V)", r"$I_D$ (-1)(mA) [$V_{GS}=0$]", 
+    r"$V_{DS}$ (-1)(V)", r"$I_D$ (-1)(mA) [$V_{GS}=-0.245$]", 
+    r"$V_{DS}$ (-1)(V)", r"$I_D$ (-1)(mA) [$V_{GS}=-1.0$]"
 ]
 
 save_latex_table(
