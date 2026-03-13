@@ -1,0 +1,32 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../FET}}}
+
+\begin{document}
+
+\newexperiment{Junction Field Effect Transistor}{6 February, 2026}
+\setcounter{page}{17}
+
+\vspace*{1cm}
+\section{Aim}
+The aim of the experiment is to study the drain and transfer characterstics of an p-channel Junction Field Effect Transistor. 
+We shall forward-bias the gate-source junction, reverse-bias the drain-source junction, and use a fixed voltage bias method to construct our setup.
+
+\section{Theory}
+A Junction Field Effect Transistor (JFET) is a voltage-controlled semiconductor device in which the drain current ($I_D$) is 
+controlled by the gate-to-source voltage ($V_{GS}$). The gate is reverse biased, resulting in very high input impedance.
+\subsection*{Drain Characterstics}
+Drain characteristics represent the variation of drain current ($I_D$) with drain-to-
+source voltage ($V_{DS}$) for different constant values of gate-to-source voltage ($V_{GS}$).
+\subsection*{Transfer Characterstics}
+Transfer characteristics represent the variation of drain current ($I_D$) with gate-to-
+source voltage ($V_{GS}$) at a constant drain-to-source voltage ($V_{DS}$). These
+characteristics are useful for determining the transconductance of the JFET.
+
+\section{Experimental Observation}
+\input{data/observation_tables.tex}
+
+
+\section{Analysis \& Conclusion}
+
+\end{document}

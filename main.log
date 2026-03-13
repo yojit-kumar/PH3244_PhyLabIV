@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.5)  6 MAR 2026 06:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  13 MAR 2026 05:34
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -712,147 +712,22 @@ LaTeX Font Info:    Trying to load font information for U+msb on input line 115.
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
-] (./QuinckesTube/QuinckesTube.tex (./QuinckesTube/data/calculated_results.tex)
+] (./FET/FET.tex
 Chapter 1.
-
-pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.32 $$
-       \left(\frac{7.5}{169.02} \frac{1000}{15}\right) = \SI{2.96}{M}$$ [1
+(./FET/data/observation_tables.tex)) (./EbyM/EbyM.tex [17
 
 
-] (./QuinckesTube/data/calibration_tables.tex) (./QuinckesTube/data/measurement_tables.tex [2] [3]) [4]
-<QuinckesTube/plots/calibration_increasing.png, id=58, 462.528pt x 346.896pt>
-File: QuinckesTube/plots/calibration_increasing.png Graphic file (type png)
-<use QuinckesTube/plots/calibration_increasing.png>
-Package pdftex.def Info: QuinckesTube/plots/calibration_increasing.png  used on input line 61.
-(pdftex.def)             Requested size: 217.42265pt x 163.0676pt.
-<QuinckesTube/plots/calibration_decreasing.png, id=60, 462.528pt x 346.896pt>
-File: QuinckesTube/plots/calibration_decreasing.png Graphic file (type png)
-<use QuinckesTube/plots/calibration_decreasing.png>
-Package pdftex.def Info: QuinckesTube/plots/calibration_decreasing.png  used on input line 63.
-(pdftex.def)             Requested size: 217.42265pt x 163.0676pt.
-<QuinckesTube/plots/reading_SolOneInc.png, id=61, 462.528pt x 346.896pt>
-File: QuinckesTube/plots/reading_SolOneInc.png Graphic file (type png)
-<use QuinckesTube/plots/reading_SolOneInc.png>
-Package pdftex.def Info: QuinckesTube/plots/reading_SolOneInc.png  used on input line 71.
-(pdftex.def)             Requested size: 217.42265pt x 163.0676pt.
-<QuinckesTube/plots/reading_SolOneDec.png, id=62, 462.528pt x 346.896pt>
-File: QuinckesTube/plots/reading_SolOneDec.png Graphic file (type png)
-<use QuinckesTube/plots/reading_SolOneDec.png>
-Package pdftex.def Info: QuinckesTube/plots/reading_SolOneDec.png  used on input line 73.
-(pdftex.def)             Requested size: 217.42265pt x 163.0676pt.
- [5 <./QuinckesTube/plots/calibration_increasing.png> <./QuinckesTube/plots/calibration_decreasing.png>]
-<QuinckesTube/plots/reading_SolTwoInc.png, id=74, 462.528pt x 346.896pt>
-File: QuinckesTube/plots/reading_SolTwoInc.png Graphic file (type png)
-<use QuinckesTube/plots/reading_SolTwoInc.png>
-Package pdftex.def Info: QuinckesTube/plots/reading_SolTwoInc.png  used on input line 78.
-(pdftex.def)             Requested size: 217.42265pt x 163.0676pt.
-<QuinckesTube/plots/reading_SolTwoDec.png, id=75, 462.528pt x 346.896pt>
-File: QuinckesTube/plots/reading_SolTwoDec.png Graphic file (type png)
-<use QuinckesTube/plots/reading_SolTwoDec.png>
-Package pdftex.def Info: QuinckesTube/plots/reading_SolTwoDec.png  used on input line 80.
-(pdftex.def)             Requested size: 217.42265pt x 163.0676pt.
- [6{/usr/share/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc} <./QuinckesTube/plots/reading_SolOneInc.png> <./QuinckesTube/plots/reading_SolOneDec.png> <./QuinckesTube/plots/reading_SolTwoInc.png> <./QuinckesTube/plots/reading_SolTwoDec.png>] [7] [8]) (./BJT/BJT.tex [9]
+]
 Chapter 2.
-(./BJT/npn_bjt.pdf_tex
-<BJT/npn_bjt.pdf, id=105, page=1, 357.58594pt x 169.38281pt>
-File: BJT/npn_bjt.pdf Graphic file (type pdf)
-<use BJT/npn_bjt.pdf, page 1>
-Package pdftex.def Info: BJT/npn_bjt.pdf , page1 used on input line 56.
-(pdftex.def)             Requested size: 357.58594pt x 169.39272pt.
-<BJT/npn_bjt.pdf, id=106, page=2, 357.58594pt x 169.38281pt>
-File: BJT/npn_bjt.pdf Graphic file (type pdf)
-<use BJT/npn_bjt.pdf, page 2>
-Package pdftex.def Info: BJT/npn_bjt.pdf , page2 used on input line 59.
-(pdftex.def)             Requested size: 357.58594pt x 169.39272pt.
-<BJT/npn_bjt.pdf, id=107, page=3, 357.58594pt x 169.38281pt>
-File: BJT/npn_bjt.pdf Graphic file (type pdf)
-<use BJT/npn_bjt.pdf, page 3>
-Package pdftex.def Info: BJT/npn_bjt.pdf , page3 used on input line 66.
-(pdftex.def)             Requested size: 357.58594pt x 169.39272pt.
-<BJT/npn_bjt.pdf, id=108, page=4, 357.58594pt x 169.38281pt>
-File: BJT/npn_bjt.pdf Graphic file (type pdf)
-<use BJT/npn_bjt.pdf, page 4>
-Package pdftex.def Info: BJT/npn_bjt.pdf , page4 used on input line 68.
-(pdftex.def)             Requested size: 357.58594pt x 169.39272pt.
-<BJT/npn_bjt.pdf, id=109, page=5, 357.58594pt x 169.38281pt>
-File: BJT/npn_bjt.pdf Graphic file (type pdf)
-<use BJT/npn_bjt.pdf, page 5>
-Package pdftex.def Info: BJT/npn_bjt.pdf , page5 used on input line 75.
-(pdftex.def)             Requested size: 357.58594pt x 169.39272pt.
-) [11
-
- <./BJT/npn_bjt.pdf> <./BJT/npn_bjt.pdf
-
-pdfTeX warning: pdflatex (file ./BJT/npn_bjt.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./BJT/npn_bjt.pdf
-
-pdfTeX warning: pdflatex (file ./BJT/npn_bjt.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./BJT/npn_bjt.pdf
-
-pdfTeX warning: pdflatex (file ./BJT/npn_bjt.pdf): PDF inclusion: multiple pdfs with page group included in a single page
-> <./BJT/npn_bjt.pdf
-
-pdfTeX warning: pdflatex (file ./BJT/npn_bjt.pdf): PDF inclusion: multiple pdfs with page group included in a single page
->] (./BJT/bjt_amplifier.tex
-Overfull \hbox (3.18396pt too wide) in paragraph at lines 30--30
-[][]$\OML/cmm/m/it/12 I[]$  
- []
-
-
-Overfull \hbox (3.00174pt too wide) in paragraph at lines 31--31
-[][]$\OML/cmm/m/it/12 I[]$  
- []
-
-
-Overfull \hbox (3.05618pt too wide) in paragraph at lines 32--32
-[][]$\OML/cmm/m/it/12 I[]$  
- []
-
-
-Overfull \hbox (4.85164pt too wide) in paragraph at lines 36--36
-[][]$\OML/cmm/m/it/12 V[]$  
- []
-
-
-Overfull \hbox (11.34727pt too wide) in paragraph at lines 37--37
-[][]$\OML/cmm/m/it/12 V[]$  
- []
-
-
-Overfull \hbox (18.22589pt too wide) in paragraph at lines 38--38
-[][]$\OML/cmm/m/it/12 I[]R[]$  
- []
-
-)
-Overfull \hbox (55.28453pt too wide) in paragraph at lines 46--50
- [][] 
- []
-
-(./BJT/bjt_oscillator.tex) (./BJT/data/observation_tables.tex [12]) (./BJT/bjt_amp_obs.tex) [13]
-<BJT/plots/base_char.png, id=136, 722.7pt x 433.62pt>
-File: BJT/plots/base_char.png Graphic file (type png)
-<use BJT/plots/base_char.png>
-Package pdftex.def Info: BJT/plots/base_char.png  used on input line 99.
-(pdftex.def)             Requested size: 452.9679pt x 271.77934pt.
-<BJT/plots/collector_char.png, id=137, 722.7pt x 433.62pt>
-File: BJT/plots/collector_char.png Graphic file (type png)
-<use BJT/plots/collector_char.png>
-Package pdftex.def Info: BJT/plots/collector_char.png  used on input line 105.
-(pdftex.def)             Requested size: 452.9679pt x 271.77934pt.
- [14 <./BJT/plots/base_char.png>]) (./EbyM/EbyM.tex [15 <./BJT/plots/collector_char.png>]
-Chapter 3.
 [21
 
 ] (./EbyM/data/calculated_results.tex) (./EbyM/data/observation_tables.tex)
-<EbyM/plots/ebm1.png, id=168, 462.528pt x 346.896pt>
+<EbyM/plots/ebm1.png, id=48, 462.528pt x 346.896pt>
 File: EbyM/plots/ebm1.png Graphic file (type png)
 <use EbyM/plots/ebm1.png>
 Package pdftex.def Info: EbyM/plots/ebm1.png  used on input line 80.
 (pdftex.def)             Requested size: 226.48395pt x 169.86406pt.
-<EbyM/plots/ebm2.png, id=169, 462.528pt x 346.896pt>
+<EbyM/plots/ebm2.png, id=50, 462.528pt x 346.896pt>
 File: EbyM/plots/ebm2.png Graphic file (type png)
 <use EbyM/plots/ebm2.png>
 Package pdftex.def Info: EbyM/plots/ebm2.png  used on input line 87.
@@ -869,18 +744,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 47276 strings out of 469515
- 1147595 string characters out of 5470808
- 1794780 words of memory out of 5000000
- 75335 multiletter control sequences out of 15000+600000
- 638416 words of font info for 78 fonts, out of 8000000 for 9000
+ 46033 strings out of 469515
+ 1111975 string characters out of 5470807
+ 1742171 words of memory out of 5000000
+ 74182 multiletter control sequences out of 15000+600000
+ 636696 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 89i,14n,107p,1313b,1295s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmti12.pfb></usr/share/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on main.pdf (20 pages, 484376 bytes).
+ 89i,14n,107p,505b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on main.pdf (7 pages, 197670 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
- 271 compressed objects within 3 object streams
- 74 named destinations out of 1000 (max. 500000)
- 256 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 178 PDF objects out of 1000 (max. 8388607)
+ 139 compressed objects within 2 object streams
+ 30 named destinations out of 1000 (max. 500000)
+ 111 words of extra memory for PDF output out of 10000 (max. 10000000)
 

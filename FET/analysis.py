@@ -35,6 +35,65 @@ def save_latex_table(df, caption, label, FILE):
 
 
 #DATA LOADING
+drain_0 = pd.read_csv("data/drain_0.csv")
+drain_0245 = pd.read_csv("data/drain_0245.csv")
+drain_1 = pd.read_csv("data/drain_1.csv")
+
+output_2 = pd.read_csv("data/transfer_2.csv")
+output_405 = pd.read_csv("data/transfer_405.csv")
+output_602 = pd.read_csv("data/transfer_602.csv")
+
+VGSarray = np.array([0.0, -0.245, -1.0])
+VDSarray = np.array([2.0, 4.05, 6.02])
+
+marker = ['o', 's', '^']
+linestyle = ['-', ':', '-.']
+
+
+
+
+
+def linear_fit(x, a, b):
+    return a*x + b
+
+def drain_plot(dataFrame, i):
+    x_array = np.array(dataFrame.iloc[:,0])
+    y_array = np.array(dataFrame.iloc[:,1])
+
+    #x_fit = x_array[-7:]
+    #y_fit = y_array[-7:]
+
+    #params, covar = curve_fit(linear_fit, x_fit, y_fit)
+    #a, b = params
+
+    #x_fit = np.linspace(np.min(x_fit), np.max(x_fit), 500)
+    #y_fit = linear_fit(x_fit, a, b)
+
+    plt.scatter(x_array, y_array, marker=marker[i], color="gray", label=f"V = {VGSarray[i]}")
+    plt.plot(x_array, y_array, linestyle=linestyle[i], color="black", label=f"V = {VGSarray[i]}")
+ 
+
+drain_plot(drain_0, 0)
+drain_plot(drain_0245, 1)
+drain_plot(drain_1, 2)
+
+plt.xlabel(r"$V_{DS}$ ($V$)")
+plt.ylabel(r"$I_{D}$ ($mA$)")
+plt.title("Drain Characterstics of p-channel JFET")
+
+plt.grid()
+plt.legend()
+plt.savefig("plots/drain_plot.png")
+#plt.clf()
+plt.show()
+
+
+
+
+
+
+
+
 
 # Create a nice table
 #table_df = pd.DataFrame({
