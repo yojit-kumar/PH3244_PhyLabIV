@@ -25,8 +25,127 @@ characteristics are useful for determining the transconductance of the JFET.
 
 \section{Experimental Observation}
 \input{data/observation_tables.tex}
+\input{data/calculated_results.tex}
 
+\section{Analysis}
+\begin{figure}[H]
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{"plots/drain_plot.png"}
+		\caption{Drain Charactertics \\ $V_{DS}$ vs. $I_D$ at $V_{GS} = \{0.0, -0.245, -1.0\} \unit{\volt}$}
+		\label{fig:drain}
+	\end{subfigure}
+	\hfill
+	\begin{subfigure}{0.45\textwidth}
+		\centering
+		\includegraphics[width=\textwidth]{"plots/transfer_plot.png"}
+		\caption{Transfer Characterstics \\ $V_{GS}$ vs. $I_D$ at $V_{DS} = \{2.0, 4.05, 6.02\} \unit{\volt}$}
+		\label{fig:transfer}
+	\end{subfigure}
+\end{figure}
 
-\section{Analysis \& Conclusion}
+We start by plotting the characterstics curve from the observation data. We get the expected curves for both the cases as seen in 
+\autoref{fig:drain} and \autoref{fig:transfer} for Drain and Transfer characterstics respectively.
+
+For the \autoref{fig:drain}, The x-axis represents the drain-to-source voltage ($V_{DS}$). For a p-channel device, this value is negative. 
+At low values of $V_{DS}$, the FET acts like a variable resistor. The drain current $I_D$ rises rapidly and almost linearly as $V_{DS}$ increases. 
+As $V_{DS}$ becomes more negative, the current eventually stops rising and levels off. 
+In this region, $I_D$ remains relatively constant regardless of changes in $V_{DS}$. 
+The highest curve is when $V_{GS} = \qty{0}{\volt}$ (resulting in $I_{DS}$ in the saturation region). 
+As you make $V_{GS}$ more positive, the entire curve shifts downward, meaning the saturation current occurs at lower levels.
+
+For the \autoref{fig:transfer}, the control voltage ($V_{GS}$) is positive, and the drain current ($I_D$) magnitude is positive. 
+Therefore, the curve is plotted in the first quadrant of a standard Cartesian plane. 
+As you apply an increasingly positive voltage to the gate, the depletion region expands, narrowing the conductive channel. 
+The specific positive voltage where the channel closes completely and $I_D$ drops to $\qty{0}{\ampere}$ is the pinch-off voltage ($+V_P$). 
+The curve is not a straight line; it is a parabola. The relationship is mathematically defined by Shockley's Equation.
+
+Now, we shall move on to calculate some other parameters for the pchannel JFET like the drain resistance ($r_d$), transconductance ($g_m$) and 
+amplification factor ($\mu$).
+
+First calculating the drain resistance; Drain resistance is defined as the ratio of a small change in drain-to-source voltage
+to the corresponding change in drain current, keeping VGS constant, when the JFET operates in the pinch-off region.
+$$ r_d = \left( \frac{\partial V_{DS}}{\partial I_D} \right) $$
+We will find the slope for the different pinchoff regions in our drain curve.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{"plots/drain_resistance_plot.png"}
+	\caption{Drain Resistance}
+	\label{fig:drain_resistance}
+\end{figure}
+
+The values of slopes and $r_d$ from the \autoref{fig:drain_resistance} are as follows:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lccc}
+		\toprule
+		\# & $V_{GS} \unit{\volt}$ & slope & $r_d \unit{\kilo\ohm}$ \\
+		\midrule
+		1 & $0.0$ & $\slopeOne \pm \slopeOneErr$ & $\rdOne$ \\
+		2 & $-0.245$ & $\slopeTwo \pm \slopeTwoErr$ & $\rdTwo$ \\
+		3 & $-1.0$ & $\slopeThree \pm \slopeThreeErr$ & $\rdThree$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:rd}
+\end{table}
+
+We would ignore the value for $r_d$ at $V_{GS} = -1.0$ as it doesn't seem to be in the pinchoff region properly in the observations we have taken. 
+So, the final drain resistance we can take average for our other two readings. Thus, $r_d = \qty{6.2744}{\kilo\ohm}$.
+
+Now, calculating the transconductance ($g_m$); Transconductance is defined as the ratio of a small change in drain current to the
+corresponding change in gate-to-source voltage, keeping VDS constant.
+$$ g_m = \left( \frac{\partial I_D}{\partial V_{GS}} \right) $$
+
+I start by calculating the derivative for all the points on the transfer curve and then finding the maximum value for the transconductance for each $V_{DS}$.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.6\textwidth]{"plots/transconductance_plot.png"}
+	\caption{Drain Resistance}
+	\label{fig:transconductance}
+\end{figure}
+
+And, the values that we have gotten are as follows:
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc}
+		\toprule
+		\# & $V_{DS} \unit{\volt}$ & $g_m \unit{\milli\mho}$ \\
+		\midrule
+		1 & $2.0$ & $\gmZeroVDSTwo$ \\
+		2 & $4.05$ & $\gmZeroVDSFourPointZeroFive$ \\
+		3 & $6.02$ & $\gmZeroVDSSixPointZeroTwo$ \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:gm}
+\end{table}
+So we can say the actual $g_m$ will be much closer to the actual value so our estimation of $g_m$ is $\gmZeroVDSSixPointZeroTwo \unit{\milli\mho}$.
+
+Now, calculating the amplification factor; Amplification factor is defined as the ratio of a small change in drain-to-source
+voltage to the corresponding change in gate-to-source voltage, keeping ID constant.
+\begin{align*}
+	\mu &= \left( \frac{\partial V_{DS}}{\partial V_{GS}} \right) \\
+	\mu & = r_d \times g_m
+\end{align*}
+
+So the value is simply just:
+\begin{align*}
+	\mu &= 6.2744 \times \gmZeroVDSSixPointZeroTwo \\
+	    &= \num{129.1459}
+\end{align*}
+
+\section{Conclusion}
+ We consider our experiment successfull as we got expected characterstics curves for the pchannel JFET and the following paramter values.
+\begin{table}[H]
+	\centering
+	\begin{tabular}{lcc}
+		\toprule	
+		1 & drain resistance ($r_d$) & $\qty{6.2744}{\kilo\ohm}$  \\
+		2 & transconductance ($g_m$) & $\gmZeroVDSSixPointZeroTwo \unit{\milli\mho}$\\
+		3 & amplification factor ($\mu$) & \num{129.1459} \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:results}
+\end{table}
+
 
 \end{document}

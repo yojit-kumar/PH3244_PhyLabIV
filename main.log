@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  13 MAR 2026 05:34
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026/Arch Linux) (preloaded format=pdflatex 2026.3.10)  13 MAR 2026 14:40
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -714,20 +714,48 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ] (./FET/FET.tex
 Chapter 1.
-(./FET/data/observation_tables.tex)) (./EbyM/EbyM.tex [17
+(./FET/data/observation_tables.tex [17
 
 
-]
+]) (./FET/data/calculated_results.tex)
+<FET/plots/drain_plot.png, id=31, 462.528pt x 346.896pt>
+File: FET/plots/drain_plot.png Graphic file (type png)
+<use FET/plots/drain_plot.png>
+Package pdftex.def Info: FET/plots/drain_plot.png  used on input line 34.
+(pdftex.def)             Requested size: 203.83417pt x 152.87819pt.
+<FET/plots/transfer_plot.png, id=33, 462.528pt x 346.896pt>
+File: FET/plots/transfer_plot.png Graphic file (type png)
+<use FET/plots/transfer_plot.png>
+Package pdftex.def Info: FET/plots/transfer_plot.png  used on input line 41.
+(pdftex.def)             Requested size: 203.83417pt x 152.87819pt.
+ [18]
+<FET/plots/drain_resistance_plot.png, id=45, 462.528pt x 346.896pt>
+File: FET/plots/drain_resistance_plot.png Graphic file (type png)
+<use FET/plots/drain_resistance_plot.png>
+Package pdftex.def Info: FET/plots/drain_resistance_plot.png  used on input line 72.
+(pdftex.def)             Requested size: 271.7835pt x 203.8464pt.
+ [19 <./FET/plots/drain_plot.png> <./FET/plots/transfer_plot.png>]
+<FET/plots/transconductance_plot.png, id=59, 462.528pt x 346.896pt>
+File: FET/plots/transconductance_plot.png Graphic file (type png)
+<use FET/plots/transconductance_plot.png>
+Package pdftex.def Info: FET/plots/transconductance_plot.png  used on input line 102.
+(pdftex.def)             Requested size: 271.7835pt x 203.8464pt.
+ [20 <./FET/plots/drain_resistance_plot.png>]) (./EbyM/EbyM.tex [21 <./FET/plots/transconductance_plot.png>]
 Chapter 2.
-[21
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.21}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.37 $$
+        B = 2\times\frac{\mu_0In}{2 (5/4)^{3/2} a} = 2 \times \left( \frac{2... [21
 
 ] (./EbyM/data/calculated_results.tex) (./EbyM/data/observation_tables.tex)
-<EbyM/plots/ebm1.png, id=48, 462.528pt x 346.896pt>
+<EbyM/plots/ebm1.png, id=91, 462.528pt x 346.896pt>
 File: EbyM/plots/ebm1.png Graphic file (type png)
 <use EbyM/plots/ebm1.png>
 Package pdftex.def Info: EbyM/plots/ebm1.png  used on input line 80.
 (pdftex.def)             Requested size: 226.48395pt x 169.86406pt.
-<EbyM/plots/ebm2.png, id=50, 462.528pt x 346.896pt>
+<EbyM/plots/ebm2.png, id=92, 462.528pt x 346.896pt>
 File: EbyM/plots/ebm2.png Graphic file (type png)
 <use EbyM/plots/ebm2.png>
 Package pdftex.def Info: EbyM/plots/ebm2.png  used on input line 87.
@@ -744,18 +772,18 @@ L3 programming layer <2026-01-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 46033 strings out of 469515
- 1111975 string characters out of 5470807
- 1742171 words of memory out of 5000000
- 74182 multiletter control sequences out of 15000+600000
+ 46119 strings out of 469515
+ 1114195 string characters out of 5470807
+ 1753097 words of memory out of 5000000
+ 74248 multiletter control sequences out of 15000+600000
  636696 words of font info for 73 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  89i,14n,107p,505b,1286s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
-Output written on main.pdf (7 pages, 197670 bytes).
+</usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (11 pages, 331124 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
- 139 compressed objects within 2 object streams
- 30 named destinations out of 1000 (max. 500000)
- 111 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 227 PDF objects out of 1000 (max. 8388607)
+ 174 compressed objects within 2 object streams
+ 42 named destinations out of 1000 (max. 500000)
+ 139 words of extra memory for PDF output out of 10000 (max. 10000000)
 
