@@ -1,0 +1,93 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../Cornu}}}
+
+\begin{document}
+
+\newexperiment{Cornu's Method}{06 March, 2026}
+\setcounter{page}{27}
+
+\vspace*{1cm}
+\section{Aim}
+To determine the elastic constants, specifically Young's modulus ($Y$) and Poisson's ratio ($\zeta$), of a given transparent beam using Cornu's Method.
+
+\section{Theory}
+Cornu's method is an extension of the Newton's rings experiment, where a transparent Perspex beam is utilized in place of the standard flat glass base. When equal weights ($W = m_1g$) are hung from the free ends of the beam, it undergoes a longitudinal bending along its length. This longitudinal bending will also result in a certain amount of lateral bending, which is a small upward bending perpendicular to the length of the beam. 
+
+Due to this deformation, the original circular shape of the Newton rings changes to an elliptical one because the constant air-gap is now traced along an elliptical path. Let $d_n$ be the diameter of the $n^{th}$ circular ring in the absence of bending. Upon bending, the large downward bending causes the minor axis, $d_n'$, to be smaller than $d_n$. Similarly, the small upward lateral bending causes the major axis, $d_n''$, to be slightly larger than $d_n$.
+
+The radius of curvature of the plano-convex lens, $R_0$, is given by:
+$$R_0 = \frac{d_n^2}{4n\lambda}$$
+
+The radii of curvature for the longitudinal bending ($R_1$) and lateral bending ($R_2$) are derived from the changing ring dimensions:
+$$\frac{1}{R_1} = 4\lambda n \left( \frac{1}{d_n'^2} - \frac{1}{d_n^2} \right)$$
+$$\frac{1}{R_2} = 4\lambda n \left( \frac{1}{d_n''^2} - \frac{1}{d_n^2} \right)$$
+
+Poisson's ratio ($\zeta$) is the measure of the lateral strain relative to the longitudinal strain, given by:
+$$\zeta = \frac{R_1}{R_2}$$
+
+By equating the internal bending moment to the external moment due to the attached weights, Young's modulus ($Y$) can be calculated as:
+$$Y = \frac{12 m_1g L R_1}{w h^3}$$
+where $L$ is the distance to the support, $w$ is the beam width, and $h$ is the beam thickness.
+
+\section{Experimental Observation}
+\input{data/observation_tables.tex}
+
+
+\section{Analysis}
+\input{data/calculated_results.tex}
+
+\subsection{Determination of Baseline Curvature}
+To establish the baseline geometry of the plano-convex lens, the square of the undisturbed ring diameters ($d_n^2$) for $W=0$ was plotted against the ring number $n$. According to the theory, this relationship is linear:
+$$d_n^2 = (4 \lambda R_0) \cdot n$$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.75\textwidth]{plots/r0.png}
+    \caption{Linear fits for the determination of baseline plano-convex lens curvature ($R_0$).}
+    \label{fig:r0}
+\end{figure}
+
+A linear regression of the form $y = mx + c$ was fitted to the data, as shown in \autoref{fig:r0}. Utilizing the left-to-right and top-to-bottom measurements, the fitted slopes ($m$) were determined to be \slopeZeroOne\ and \slopeZeroTwo, respectively. By equating the experimental slope $m$ to $4\lambda R_0$, the baseline radius was extracted via $R_0 = \frac{m}{4\lambda}$, yielding an average baseline lens radius of \RZeroAvg.
+
+\subsection{Determination of Bending Radii}
+For each applied mass, the beam deformation altered the ring dimensions into ellipses. To find the longitudinal bending radius ($R_1$), the inverse difference of the squared diameters was isolated as the dependent variable ($y$), and the inverse ring number as the independent variable ($x$):
+$$y = \left( \frac{1}{d_n'^2} - \frac{1}{d_n^2} \right), \quad x = \frac{1}{n}$$
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{plots/r1_subplots.png}
+    \caption{Linear fits plotting longitudinal deformation against $1/n$ to determine the longitudinal bending radii ($R_1$).}
+    \label{fig:r1}
+\end{figure}
+
+This transforms the theoretical equation into a linear fit passing through the origin ($y = m_1 \cdot x$), where $m_1 = \frac{1}{4\lambda R_1}$. By fitting the experimental data to this model (\autoref{fig:r1}), the slope $m_1$ was extracted, and $R_1$ was subsequently calculated as $R_1 = \frac{1}{4\lambda m_1}$. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.9\textwidth]{plots/r2_subplots.png}
+    \caption{Linear fits plotting lateral deformation against $1/n$ to determine the lateral bending radii ($R_2$).}
+    \label{fig:r2}
+\end{figure}
+
+A parallel methodology was applied for the lateral bending radius ($R_2$), taking the absolute difference due to the lateral expansion ($d_n'' > d_n$):
+$$\left| \frac{1}{d_n''^2} - \frac{1}{d_n^2} \right| = m_2 \cdot \frac{1}{n} \quad \text{where} \quad m_2 = \frac{1}{4\lambda R_2}$$
+
+The fits for lateral bending are illustrated in \autoref{fig:r2}. The calculated values for both $R_1$ and $R_2$ across the tested mass loads are compiled in \autoref{tab:radii}.
+
+\input{data/analysis_tables.tex}
+\subsection{Calculation of Poisson's Ratio}
+With the respective bending radii empirically determined from the slopes of the linear fits, Poisson's Ratio was calculated for each mass configuration by taking the direct ratio $\zeta = R_1 / R_2$. The individual values and the final averaged ratio are presented in \autoref{tab:poisson}.
+
+\subsection{Calculation of Young's Modulus}
+Using the known geometric dimensions of the beam (width $w$, thickness $h$, and support length $L$), Young's Modulus was evaluated for each applied mass using the determined longitudinal radius $R_1$:
+$$Y = \frac{12 m_1g L R_1}{w h^3}$$
+The individual calculations and the overall mean Young's Modulus are detailed in \autoref{tab:youngs}.
+
+\subsection{Error Estimation}
+The biggest source of systematic error in this estimation resides in the physical measurement of the transparent beam's thickness ($h$). Because $h$ is cubed in the Young's Modulus calculation ($h^3$), even fractional micrometer errors are amplified exponentially in the final outcome. Secondary errors arise from the optical difficulty in pinpointing the exact geometrical center of the broad, dark interference fringes with the traveling microscope crosshairs. Additionally, slight mechanical friction at the triangular support pegs may prevent the beam from bending ideally according to theory.
+
+\section{Conclusion}
+The Cornu's method experiment was successfully executed to observe the elliptical deformation of Newton's rings resulting from applied stress on a transparent beam. This analysis allowed for the successful empirical calculation of the beam's elastic constants: Young's Modulus and Poisson's ratio.
+
+\end{document}
