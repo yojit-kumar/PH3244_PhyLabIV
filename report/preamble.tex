@@ -1,18 +1,13 @@
-\documentclass[12pt]{report}
-
-% --- PAGE LAYOUT & FORMATTING --- %
+% --- PACKAGES --- %
 \usepackage[a4paper, margin=1in]{geometry}
-\usepackage{fancyhdr}
-\usepackage{float}
-\usepackage{titlesec}  
-\usepackage{booktabs}   
+\usepackage{fancyhdr, titlesec, bookmark}
+\usepackage{float, graphicx, subcaption}
+\usepackage{booktabs, multirow}   
+\usepackage{tikz, circuitikz}
+\usepackage{amsmath, amssymb}
 \usepackage{indentfirst}
 \usepackage{hyperref}   
-\usepackage{bookmark}
-\usepackage{multirow}
-\usepackage{graphicx}
-
-\input{preamble}
+\usepackage{siunitx}
 
 % --- SUBFILES --- %
 \usepackage{subfiles}
@@ -88,74 +83,3 @@
     \noindent \textbf{Date: #2}
     \endgroup
 }
-
-
-
-
-% --- DOCUMENT START --- %
-\begin{document}
-
-% --- FRONT --- %
-\pagenumbering{gobble}
-\thispagestyle{empty}
-\titleGP
-\clearpage
-
-% --- INDEX --- %
-\pagenumbering{gobble}
-\thispagestyle{empty}
-\begin{center}
-	{\huge\textbf{Index of Experiments}} \\[1em]
-	\hrulefill
-\end{center}
-\vspace{1cm}
-
-\begin{table}[H]
-	\centering
-	\begin{tabular}{|c|p{7.8cm}|c|c|c|}
-		\hline
-		\multirow{2}{*}{\textbf{\#}}& \multirow{2}{*}{\textbf{Name of Experiment}}& \multirow{2}{*}{\textbf{Page}}& \multicolumn{2}{|c|}{\textbf{Date}}\\ \cline{4-5}
-					    & & &\textbf{Conducted}& \textbf{Submitted}\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-		&&&&\\
-		&&&&\\ \hline
-	\end{tabular}
-\end{table}
-
-% --- MAIN --- %
-\pagenumbering{arabic}
-\pagestyle{fancy}
-
-\clearpage
-
-\subfile{QuinckesTube/QuinckesTube}
-
-\subfile{BJT/BJT}
-
-\subfile{FET/FET}
-
-\subfile{EbyM/EbyM}
-
-\end{document}
-

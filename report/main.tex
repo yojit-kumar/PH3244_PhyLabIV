@@ -1,0 +1,74 @@
+\documentclass[12pt]{report}
+
+\input{preamble}
+
+% --- DOCUMENT START --- %
+\begin{document}
+
+% --- FRONT --- %
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\titleGP
+\clearpage
+
+% --- INDEX --- %
+\pagenumbering{gobble}
+\thispagestyle{empty}
+\begin{center}
+	{\huge\textbf{Index of Experiments}} \\[1em]
+	\hrulefill
+\end{center}
+\vspace{1cm}
+
+\begin{table}[H]
+	\centering
+	\begin{tabular}{|c|p{7.8cm}|c|c|c|}
+		\hline
+		\multirow{2}{*}{\textbf{\#}}& \multirow{2}{*}{\textbf{Name of Experiment}}& \multirow{2}{*}{\textbf{Page}}& \multicolumn{2}{|c|}{\textbf{Date}}\\ \cline{4-5}
+					    & & &\textbf{Conducted}& \textbf{Submitted}\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+		&&&&\\
+		&&&&\\ \hline
+	\end{tabular}
+\end{table}
+
+% --- MAIN --- %
+\pagenumbering{arabic}
+\pagestyle{fancy}
+
+\clearpage
+
+\subfile{exp01QuinckesTube/QuinckesTube}
+
+\subfile{exp02BJT/BJT}
+
+\subfile{exp03FET/FET}
+
+\subfile{exp04EbyM/EbyM}
+
+\subfile{exp05Cornu/Cornu}
+
+\subfile{exp06UltraSound/UltraSound}
+
+\end{document}
