@@ -6,13 +6,13 @@ This is a repository to just save and track my lab report and analysis for the 3
 
 ```
 .
-├── XX<**Experiment Name**>
+├── XX<_Experiment Name_>
 │   ├── analysis.py
 │   ├── data
-│   │   ├── <*tables*>.tex
-│   │   └── <*observations*>.csv
+│   │   ├── <_tables_>.tex
+│   │   └── <_observations_>.csv
 │   ├── manual
-│   └── <*subfile*>.tex
+│   └── <_subfile_>.tex
 │ 
 ├── lib
 │   └── latex_utils.py
