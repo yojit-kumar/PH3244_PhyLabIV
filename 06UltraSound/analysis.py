@@ -1,43 +1,18 @@
-import os
+import sys
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 
-# --- CREATE DIRECTORIES ---
-os.makedirs("data", exist_ok=True)
-os.makedirs("plots", exist_ok=True)
+sys.path.append("../lib/")
+from latex_utils import *
+
+run_before_start()
 
 # --- CONFIGURATION & CONSTANTS ---
 wavelength = 655e-9  # Laser wavelength in meters
 L = 1.319  # Distance between crystal and detector in meters
 f = 3.2e6  # Frequency of crystal in Hz
-
-RESULTS_FILE = "data/calculated_results.tex"
-OBS_TABLES_FILE = "data/observation_tables.tex"
-ANAL_TABLES_FILE = "data/analysis_tables.tex"
-
-# Clear out old files to start fresh
-with open(RESULTS_FILE, "w") as file: file.write("")
-with open(OBS_TABLES_FILE, "w") as file: file.write("% Auto-generated observation tables\n")
-with open(ANAL_TABLES_FILE, "w") as file: file.write("% Auto-generated analysis tables\n")
-
-# --- HELPER FUNCTIONS ---
-def save_latex_cmd(name, value):
-    with open(RESULTS_FILE, "a") as file:
-        # Saving variable values in scientific notation
-        file.write(f"\\newcommand{{\\{name}}}{{\\SI{{{value:.4e}}}{{}}}}\n")
-
-def save_latex_table(df, caption, label, filepath, float_fmt="%.4e"):
-    # Generates a standard LaTeX table string
-    latex_str = df.to_latex(index=False, 
-                            caption=caption, 
-                            label=label,
-                            float_format=float_fmt,
-                            position="H",
-                            column_format="c" * len(df.columns))
-    with open(filepath, "a") as file:
-        file.write(latex_str + "\n\n")
 
 # --- DATA LOADING & CLEANING ---
 sine_df = pd.read_csv("data/sine.csv")
