@@ -4,14 +4,16 @@ This is a repository to just save and track my lab report and analysis for the 3
 
 ## Repository Structure
 
+```
 .
-├── XX<_Experiment Name_>
+├── <XX_EXPERIMENT_NAME>
 │   ├── analysis.py
+│   ├── plots
 │   ├── data
-│   │   ├── <_tables_>.tex
-│   │   └── <_observations_>.csv
+│   │   ├── <TABLES>.tex
+│   │   └── <OBSERVATIONS>.csv
 │   ├── manual
-│   └── <_subfile_>.tex
+│   └── <SUBFILE>.tex
 │ 
 ├── lib
 │   └── latex_utils.py
@@ -20,5 +22,5 @@ This is a repository to just save and track my lab report and analysis for the 3
 ├── main.tex
 ├── preamble.tex
 └── README.md
-
+```
 We are using the `subfiles` LaTeX package to use a subdirectory structure to sort each experiment in a separate folder. The whole report can be compiled using the `main.tex` file.
