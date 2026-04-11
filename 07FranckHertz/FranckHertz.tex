@@ -1,0 +1,56 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../07FranckHertz}}}
+
+\begin{document}
+
+\newexperiment{Franck-Hertz Experiment}{02 April, 2026}
+\setcounter{page}{37}
+
+\vspace*{1cm}
+\section{Aim}
+The aim of this experiment is to determine the first excitation potential of Argon gas using the Franck-Hertz experimental setup. By observing the inelastic scattering of low-energy electrons, this experiment seeks to verify the existence of discrete atomic energy levels as postulated by the Bohr model.
+
+\section{Theory}
+From early spectroscopic work, it is established that atoms emit and absorb radiation at discrete frequencies. According to Bohr's model of the atom, the frequency of this radiation ($\nu$) is related to the change between discrete energy levels through the equation $E=h\nu$. Consequently, the transfer of energy to atomic electrons via any mechanism such as the inelastic scattering of low-energy electrons should occur in discrete, quantized amounts.
+
+The Franck-Hertz experiment utilizes a tetrode tube filled with Argon vapor at low pressure. The setup consists of an electron-emitting cathode (K), a grid ($G_1$) to minimize space charge effects, a second accelerating grid ($G_2$), and a collecting anode (A). Electrons are accelerated by a variable potential $V_{G2K}$ applied between the cathode and grid $G_2$. The anode is maintained at a slightly negative retarding potential $V_{G2A}$ relative to $G_2$. Therefore, only electrons possessing sufficient kinetic energy can overcome this barrier to reach the anode and contribute to the measured plate current ($I_p$).
+
+As the accelerating voltage increases, the electron energy reaches a threshold equivalent to the first allowed excited state of the Argon atom. The electrons undergo inelastic collisions, transferring their kinetic energy to the atoms. Having lost their energy, these electrons can no longer overcome the retarding potential, causing a sharp drop (dip) in the plate current. As the voltage is increased further, an electron can excite an atom, lose its energy, and subsequently be accelerated again to excite a second atom, resulting in periodic dips in the current.
+
+If $V_n$ is the potential corresponding to the $n^{th}$ peak and $V_1$ is the potential corresponding to the first peak, the mean first excitation potential is calculated as:
+\begin{equation}
+	\text{Excitation Potential} = \frac{V_n - V_1}{n -1}
+\end{equation}
+where $(n-1)$ is the number of intervals between the first and the $n^{th}$ peak.
+
+\section{Experimental Observation}
+\input{data/observation_tables.tex}
+
+The electron plate current ($I_p$) was systematically measured as a function of the accelerating voltage ($V_{G2K}$). To optimize the resolution of the current dips, the measurements were recorded with the current multiplier set to $10^{-7}$ A. Initial static parameters were configured according to standard operating procedure: $V_{G1K}$ was set to 1.5 V, and the retarding potential $V_{G2A}$ was set to 7.5 V. A total of 84 data points were recorded to capture multiple excitation cycles.
+
+\section{Analysis}
+\input{data/calculated_results.tex}
+
+The recorded data was plotted with the output plate current ($I_p$) on the Y-axis and the accelerating voltage ($V_{G2K}$) on the X-axis. As theoretically predicted, the resulting amplitude spectrum curve exhibited a series of periodic maxima and minima, indicating discrete energy transfer.
+
+Because the experimental data was sampled at discrete voltage intervals, the true physical maximum of each excitation peak almost certainly lies in the continuous space between the recorded data points. To mitigate quantization error introduced by the step size of the power supply and achieve higher precision, a local polynomial interpolation method was employed.
+
+First, a peak-finding algorithm identified the approximate locations of the $\totalPeaks$ visible maxima. For each identified peak, a local 5-point data window was isolated. A second-degree polynomial (a local parabola) was fitted to these points. The exact voltage corresponding to the true, continuous peak was then determined analytically by calculating the mathematical vertex of each fitted parabola.
+
+\begin{figure}[h]
+	\includegraphics[width=\textwidth]{plots/franck_hertz_annotated.png}
+	\label{fig:frank_hertz}
+	\caption{Plot of the observation with peaks found using 5-point interpolation}
+\end{figure}
+
+The resulting annotated plot highlights these interpolated peak voltages and explicitly indicates the calculated potential difference ($\Delta V$) between consecutive peaks. By averaging the precise voltage differences between these mathematically interpolated peaks, we evaluated the mean excitation interval. The theoretical first excitation potential for Argon is approximately 11.6 V. Comparing our refined experimental mean to this theoretical value allows us to verify the quantization of energy transfers in the gaseous medium.
+
+\subsection*{Error Analysis}
+The mean first excitation potential derived from our interpolated data is 12.22 V, with a standard deviation of 0.61 V across the 7 identified peaks. The theoretical first excitation potential for Argon is approximately 11.6 V. Comparing our experimental result to the theoretical value yields a percentage error of approximately 5.3\%.
+
+While the parabolic interpolation significantly refined our peak identification, the slight overestimation compared to the theoretical value suggests the presence of systematic errors within the setup. A primary contributor is the contact potential difference between the cathode and the grid, which can offset the true accelerating voltage experienced by the electrons. Additionally, minute variations in the vapor pressure of the Argon gas due to temperature fluctuations within the tube can alter the electron mean free path, thereby slightly shifting the positions of the current drops. Finally, despite the interpolation, the inherent step size of the manual voltage adjustment introduces a baseline quantization error that cannot be completely eliminated.
+
+\section{Conclusion}
+The Franck-Hertz experiment was successfully conducted to demonstrate the quantization of atomic energy levels in Argon gas. By applying a local parabolic interpolation to the periodic variations in plate current, the resolution of the peak locations was significantly improved beyond the raw discrete sampling. The mean first excitation potential was calculated to be $\meanExcitation$ V, with a standard deviation of $\stdExcitation$ V across the $\totalPeaks$ identified peaks. The distinct, repeated drops in current validate the principle that energy is transferred to atoms exclusively in discrete quanta, providing strong empirical support for the Bohr atomic model.
+\end{document}
