@@ -26,6 +26,13 @@ where $(n-1)$ is the number of intervals between the first and the $n^{th}$ peak
 
 \section{Experimental Observation}
 \input{data/observation_tables.tex}
+\begin{figure}[h]
+	\centering
+	\includegraphics[width=0.4\textwidth]{data/observation.png}
+	\label{fig:obs}
+	\caption{Peaks measured using an analog ossciloscope}
+\end{figure}
+
 
 The electron plate current ($I_p$) was systematically measured as a function of the accelerating voltage ($V_{G2K}$). To optimize the resolution of the current dips, the measurements were recorded with the current multiplier set to $10^{-7}$ A. Initial static parameters were configured according to standard operating procedure: $V_{G1K}$ was set to 1.5 V, and the retarding potential $V_{G2A}$ was set to 7.5 V. A total of 84 data points were recorded to capture multiple excitation cycles.
 
@@ -39,6 +46,7 @@ Because the experimental data was sampled at discrete voltage intervals, the tru
 First, a peak-finding algorithm identified the approximate locations of the $\totalPeaks$ visible maxima. For each identified peak, a local 5-point data window was isolated. A second-degree polynomial (a local parabola) was fitted to these points. The exact voltage corresponding to the true, continuous peak was then determined analytically by calculating the mathematical vertex of each fitted parabola.
 
 \begin{figure}[h]
+	\centering
 	\includegraphics[width=\textwidth]{plots/franck_hertz_annotated.png}
 	\label{fig:frank_hertz}
 	\caption{Plot of the observation with peaks found using 5-point interpolation}

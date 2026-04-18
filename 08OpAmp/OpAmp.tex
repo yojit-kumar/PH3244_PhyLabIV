@@ -1,0 +1,80 @@
+\documentclass[../main.tex]{subfiles}
+
+\graphicspath{{\subfix{../08FranckHertz}}}
+
+\begin{document}
+
+\newexperiment{Operational Amplifier}{27 March, 2026}
+\setcounter{page}{41}
+
+\vspace*{1cm}
+\section{Aim}
+To construct and study the operational amplifier (Op-Amp) in four distinct configurations: Inverting Amplifier, Non-Inverting Amplifier, Integrator, and Differentiator. The objective is to verify their theoretical closed-loop voltage gains and frequency response characteristics across multiple parameter sets.
+
+\section{Theory}
+The Operational Amplifier is a high-gain, direct-coupled amplifier that performs versatile linear and non-linear operations when combined with external feedback elements (resistors and capacitors).
+\begin{enumerate}
+	\item \textbf{Inverting Amplifier:} The input signal is connected to the inverting terminal via resistor $R_{in}$, and a feedback resistor $R_f$ bridges the output and the inverting input. The closed-loop gain is defined as: $A_v = V_{out} / V_{in} = -R_f / R_{in}$.
+	\item \textbf{Non-Inverting Amplifier:} The input signal is fed to the non-inverting terminal, and the feedback network connects to ground through $R_g$. The theoretical gain is given by: $A_v = 1 + R_f / R_g$.
+	\item \textbf{Integrator Circuit:} Replacing the feedback resistor with a capacitor ($C$) causes the circuit to integrate the input signal. The output amplitude's dependence on frequency is governed by: $|V_{in}/V_{out}| = 2\pi R_1 C f$. Thus, plotting $|V_{in}/V_{out}|$ against frequency $f$ yields a straight line with slope $2\pi R_1 C$.
+	\item \textbf{Differentiator Circuit:} Exchanging the positions of the resistor and capacitor causes the circuit to differentiate the input. The frequency response follows the relation: $|V_{out}/V_{in}| = 2\pi R_2 C f$. Plotting $|V_{out}/V_{in}|$ versus $f$ results in a linear trend with a theoretical slope of $2\pi R_2 C$.
+\end{enumerate}
+
+\section{Experimental Observations}
+\input{data/observation_tables.tex}
+
+\section{Analysis}
+\input{data/calculated_results.tex}
+\subsection*{Inverting Amplifier} 
+A linear plot of $V_{out}$ versus $V_{in}$ yielded slopes representing the closed-loop voltage gains. For Set 1 ($R_{in} = 100 \ \Omega, R_f = 1000 \ \Omega$), the experimental gain was $\invExpGainOne$ compared to a theoretical gain of $\invTheoGainOne$. For Set 2 ($R_{in} = 1000 \ \Omega, R_f = 18000 \ \Omega$), the experimental gain was $\invExpGainTwo$ against a theoretical $\invTheoGainTwo$.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{plots/inverting_amp.png}
+	\caption{Inverting Amplifier}
+	\label{fig:inv}
+\end{figure}
+
+\subsection*{Non-Inverting Amplifier} 
+Similarly, the linear regression of the non-inverting setup yielded an experimental gain of $\nonExpGainOne$ for Set 1 (theoretical: $\nonTheoGainOne$) and $\nonExpGainTwo$ for Set 2 (theoretical: $\nonTheoGainTwo$).
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{plots/non_inverting_amp.png}
+	\caption{Non-Inverting Amplifier}
+	\label{fig:noninv}
+\end{figure}
+
+\subsection*{Integrator Circuit} 
+The inverse voltage gain ($|V_{in}/V_{out}|$) was plotted against the frequency $f$. The linear fit for Set 1 ($R_1 = 1000 \ \Omega$) gave a slope of $\intSlopeOne$. Using the relation $C = \text{slope} / (2\pi R_1)$, the experimental capacitance was determined to be $\intCalcValOne$ F. For Set 2 ($R_1 = 100 \ \Omega$), the slope was $\intSlopeTwo$, yielding a calculated capacitance of $\intCalcValTwo$ F.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{plots/integrator.png}
+	\caption{Integrator Circuit}
+	\label{fig:int}
+\end{figure}
+
+\subsection*{Integrator Circuit} 
+The voltage gain ($|V_{out}/V_{in}|$) was plotted against $f$. The slope extracted for Set 1 ($C = 0.1 \ \mu$F) was \diffSlopeOne. Using $R_2 = \text{slope} / (2\pi C)$, the experimental feedback resistance was calculated as $\diffCalcValOne$ $\Omega$. For Set 2 ($C = 0.05 \ \mu$F), the slope of $\diffSlopeTwo$ yielded a calculated resistance of $\diffCalcValTwo$ $\Omega$.
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=0.5\textwidth]{plots/differentiator.png}
+	\caption{Differentiatior Circuit}
+	\label{fig:diff}
+\end{figure}
+
+\subsection*{Error Analysis}
+For the amplifiers, the percentage deviations between the experimental slope and the theoretical resistor ratios were $\invErrorOne$\% (Inverting Set 1), $\invErrorTwo$\% (Inverting Set 2), $\nonErrorOne$\% (Non-Inverting Set 1), and $\nonErrorTwo$\% (Non-Inverting Set 2).
+
+For the frequency-dependent circuits, comparing the extracted physical values from the slopes against the actual components yielded:
+\begin{itemize}
+	\item Integrator Set 1 (Actual C: $\intActualValOne$ F): $\intErrorOne$\% error.
+	\item Integrator Set 2 (Actual C: $\intActualValTwo$ F): $\intErrorTwo$\% error.
+	\item Differentiator Set 1 (Actual $R_2$: $\diffActualValOne$ $\Omega$): $\diffErrorOne$\% error.
+	\item Differentiator Set 2 (Actual $R_2$: $\diffActualValTwo$ $\Omega$): $\diffErrorTwo$\% error.
+\end{itemize}
+
+The minor deviations across the circuits are primarily attributable to the nominal tolerance ratings of the generic resistors and capacitors used, which naturally deviate slightly from their labeled values. Furthermore, unideal Op-Amp properties such as finite input impedance and non-zero output impedance; inevitably introduce slight variations from the purely ideal gain formulas.
+
+\section{Conclusion}
+The experiment was highly successful, confirming the operational rules of Op-Amps in various linear configurations.
+
+\end{document}
