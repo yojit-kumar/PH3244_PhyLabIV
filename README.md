@@ -23,4 +23,4 @@ This is a repository to just save and track my lab report and analysis for the 3
 ├── preamble.tex
 └── README.md
 ```
-We are using the `subfiles` LaTeX package to use a subdirectory structure to sort each experiment in a separate folder. The whole report can be compiled using the `main.tex` file.
+I am using the `subfiles` LaTeX package to use a subdirectory structure to sort each experiment in a separate folder. The whole report can be compiled using the `main.tex` file.
